@@ -1,5 +1,6 @@
 use leptos::{mount_to_body, view};
 
 fn main() {
-    mount_to_body(|| view! {<h1>"Mi deh ye!"</h1>});
+    console_error_panic_hook::set_once();
+    mount_to_body(|| view! {<h1>"Mi deh ye!!ß!"</h1>});
 }
