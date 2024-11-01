@@ -1,6 +1,20 @@
-use leptos::{mount_to_body, view};
+use leptos::*;
+
+#[component]
+fn App() -> impl IntoView {
+  let (count, set_count) = create_signal(0);
+
+  view! {
+    <button on:click=move |_| {
+      set_count(3);
+    }>
+      // on stable, this is move || count.get();
+      "Click me: " {move || count()}
+    </button>
+  }
+}
 
 fn main() {
-    console_error_panic_hook::set_once();
-    mount_to_body(|| view! {<h1>"Mi deh ye!!ß!"</h1>});
+  console_error_panic_hook::set_once();
+  mount_to_body(|| view! { <App /> });
 }
