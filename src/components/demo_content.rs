@@ -9,7 +9,7 @@ pub fn DemoContent() -> impl IntoView {
       on:click=move |_| {
         set_count.update(|n| *n += 1);
       }
-      class:red=move || count() % 2 == 1
+      class=("button-20", move || count() % 2 == 1)
     >
       "Click me: "
       {move || count()}
